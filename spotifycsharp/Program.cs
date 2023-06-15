@@ -20,9 +20,9 @@
                 switch (optie) 
                 {
                     case 1:
-                        Console.WriteLine("naar albumpagina..");
-                        AlbumPagina albumPagina = new AlbumPagina();
-                        albumPagina.display();
+                        Console.WriteLine("naar Playlistpagina..");
+                        PlaylistPagina playlistPagina = new PlaylistPagina();
+                        playlistPagina.display();
                         break;
 
                     case 2:
@@ -31,11 +31,32 @@
                         vriendenPagina.display();
                         break;
 
-                    case 3:
-                        Console.WriteLine("naar Playlistpagina..");
-                        PlaylistPagina
+                    case 3:                        
+                        Console.WriteLine("naar albumpagina..");
+                        AlbumPagina albumPagina = new AlbumPagina();
+                        albumPagina.display();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("naar profielpagina..");
+                        ProfielPagina profielProfiel = new ProfielPagina():
+                        profielPagina.display();
+                        break;
+
+                    case 0:
+                        Console.WriteLine("stop..");
+                        break;
+
+                    default:
+                        Console.WriteLine("geen geldige waarde.");
+                        break;
                 }
-            }
+
+
+            } while (optie != 0);
+
+            Console.WriteLine("klik een toets om te stoppen.");
+            Console.ReadKey();
 
         }
 
