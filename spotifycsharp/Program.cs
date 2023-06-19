@@ -22,25 +22,25 @@
                     case 1:
                         Console.WriteLine("naar Playlistpagina..");
                         PlaylistPagina playlistPagina = new PlaylistPagina();
-                        playlistPagina.display();
+                        playlistPagina.DisplayPlaylistPagina();
                         break;
 
                     case 2:
                         Console.WriteLine("naar Vriendenlijstpagina..");
                         VriendenPagina vriendenPagina = new VriendenPagina();
-                        vriendenPagina.display();
+                        vriendenPagina.Display();
                         break;
 
                     case 3:                        
                         Console.WriteLine("naar albumpagina..");
                         AlbumPagina albumPagina = new AlbumPagina();
-                        albumPagina.display();
+                        albumPagina.Display();
                         break;
 
                     case 4:
                         Console.WriteLine("naar profielpagina..");
                         ProfielPagina profielProfiel = new ProfielPagina():
-                        profielPagina.display();
+                        profielPagina.Display();
                         break;
 
                     case 0:
