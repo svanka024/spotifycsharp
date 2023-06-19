@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace spotifycsharp
 {
-    internal class Class1
+    internal class ProfielPagina
     {
     }
 }
