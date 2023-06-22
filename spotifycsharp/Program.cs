@@ -40,7 +40,7 @@
                     case 4:
                         Console.WriteLine("naar profielpagina..");
                         ProfielPagina profielProfiel = new ProfielPagina();
-                        profielPagina.Display();
+                        profielPagina.DisplayProfielPagina();
                         break;
 
                     case 0:
