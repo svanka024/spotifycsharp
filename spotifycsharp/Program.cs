@@ -21,7 +21,7 @@
                 {
                     case 1:
                         Console.WriteLine("naar Playlistpagina..");
-                        PlaylistPagina playlistPagina = new PlaylistPagina();
+                        AfspeellijstPagina playlistPagina = new AfspeellijstPagina();
                         playlistPagina.DisplayPlaylistPagina();
                         break;
 

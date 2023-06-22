@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace spotifycsharp
 {
-    internal class PlaylistPagina
+    internal class AfspeellijstPagina
     {
-        private static List<Playlist> Playlists = new List<Playlist>();
+        private static List<Afspeellijst> afspeellijsten = new List<Afspeellijst>();
 
         public void DisplayPlaylistPagina()
         {
@@ -26,11 +26,11 @@ namespace spotifycsharp
                 switch (option)
                 {
                     case 1:
-                        MaakNieuwePlaylist();
+                        MaakNieuweAfspeellijst();
                         break;
 
                     case 2:
-                        BekijkPlaylist();
+                        BekijkAfspeellijst();
                         break;
 
                     case 3:
@@ -44,31 +44,31 @@ namespace spotifycsharp
                 Console.WriteLine();
             } while (option != 3);
         }
-        private static void MaakNieuwePlaylist()
+        private static void MaakNieuweAfspeellijst()
         {
-            Console.WriteLine("Naam van je nieuwe playlist:");
-            string playlistNaam = Console.ReadLine();
+            Console.WriteLine("Naam van je nieuwe afspeellijst:");
+            string afspeellijstNaam = Console.ReadLine();
 
-            Playlist nieuwPlaylist = new Playlist(playlistNaam);
-            Playlists.Add(nieuwPlaylist);
+            Afspeellijst nieuwAfspeellijst = new Afspeellijst(afspeellijstNaam);
+            Afspeellijsten.Add(nieuwAfspeellijst);
 
-            Console.WriteLine($"Nieuwe playlist '{playlistNaam}' is gemaakt");
+            Console.WriteLine($"Nieuwe afspeellijst '{afspeellijstNaam}' is gemaakt");
             Console.WriteLine();
 
-            Console.WriteLine($"{nieuwPlaylist.Naam}");
+            Console.WriteLine($"{nieuwAfspeellijst.Naam}");
             Console.WriteLine();
 
-            Console.WriteLine($"{nieuwPlaylist.Liedje.Count + 1}. Ga terug naar Playlist pagina");
-            Console.Write("liedje: ");
+            Console.WriteLine($"{nieuwAfspeellijst.Nummer.Count + 1}. Ga terug naar afspeellijst pagina");
+            Console.Write("Nummer: ");
             int option = int.Parse(Console.ReadLine());
 
-            if (option == nieuwPlaylist.Liedje.Count + 1)
+            if (option == nieuwAfspeellijst.Nummer.Count + 1)
             {
                 Console.WriteLine();
                 return;
             }
 
-            if (option < 1 || option > nieuwPlaylist.Liedje.Count)
+            if (option < 1 || option > nieuwAfspeellijst.Nummer.Count)
             {
                 Console.WriteLine("Geen geldige optie.");
                 Console.WriteLine();
@@ -76,100 +76,99 @@ namespace spotifycsharp
             }
         }
 
-        private static void VerwijderPlaylist(List<Playlist> playlists)
+        private static void VerwijderAfspeellijst(List<Afspeellijst> afspeellijsten)
         {
-            Console.WriteLine("Welke playlist wil je verwijderen?");
-            Console.WriteLine("Playlist: ");
+            Console.WriteLine("Welke afspeellijst wil je verwijderen?");
+            Console.WriteLine("Afspeellijst: ");
             int optie = int.Parse(Console.ReadLine());
 
-            if (optie < 1 || optie > playlists.Count)
+            if (optie < 1 || optie > afspeellijst.Count)
             {
                 Console.WriteLine("Geen geldige optie.");
                 Console.WriteLine();
                 return;
             }
-            Playlist playlistVerwijder = playlists[optie - 1];
-            playlists.Remove(playlistVerwijder);
+            Afspeellijst afspeellijstVerwijder = afspeellijst[optie - 1];
+            afspeellijst.Remove(afspeellijstVerwijder);
 
-            Console.WriteLine($"Playlist '{playlistVerwijder.Naam}' is verwijderd.");
+            Console.WriteLine($"Afspeellijst '{afspeellijstVerwijder.Naam}' is verwijderd.");
         }
 
-        private static void BekijkPlaylist()
+        private static void BekijkAfspeellijst()
         {
             Console.WriteLine("Playlist Overzicht:");
             Console.WriteLine();
 
-            if (playlists.Count == 0)
+            if (afspeellijsten.Count == 0)
             {
                 Console.WriteLine("Er zijn geen playlist beschikbaar.");
                 Console.WriteLine();
                 return;
             }
-            for (int i = 0; i < playlists.Count; i++)
+            for (int i = 0; i < afspeellijst.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {playlists[i].Naam}");
+                Console.WriteLine($"{i + 1}. {afspeellijsten[i].Naam}");
             }
 
-            Console.WriteLine($"{playlists.Count + 1}. Verwijder een playlist");
-            Console.WriteLine($"{playlists.Count + 2}. Ga terug naar het menu");
+            Console.WriteLine($"{afspeellijsten.Count + 1}. Verwijder een playlist");
+            Console.WriteLine($"{afspeellijsten.Count + 2}. Ga terug naar het menu");
             Console.Write("Playlist: ");
             int optie = int.Parse(Console.ReadLine());
 
-            if (optie == playlists.Count + 2)
+            if (optie == afspeellijsten.Count + 2)
             {
                 Console.WriteLine();
                 return;
             }
 
-            if (optie < 1 || optie > playlists.Count + 1)
+            if (optie < 1 || optie > afspeellijsten.Count + 1)
             {
                 Console.WriteLine("Geen geldige optie.");
                 Console.WriteLine();
                 return;
             }
 
-            if (optie == playlists.Count + 1)
+            if (optie == afspeellijsten.Count + 1)
             {
-                VerwijderPlaylist(playlists);
+                VerwijderPlaylist(afspeellijsten);
                 Console.WriteLine();
                 return;
             }
 
-            Playlist geselecteerdePlaylist = playlists[optie - 1];
+            Afspeellijst geselecteerdeAfspeellijst = afspeellijsten[optie - 1];
 
             Console.WriteLine();
-            Console.WriteLine($"{geselecteerdePlaylist.Naam}:");
+            Console.WriteLine($"{geselecteerdeAfspeellijst.Naam}:");
             Console.WriteLine();
 
-            for (int i = 0; i < geselecteerdePlaylist.Liedje.Count; i++)
+            for (int i = 0; i < geselecteerdeAfspeellijst.Liedje.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {geselecteerdePlaylist.Songs[i].ToString()}");
+                Console.WriteLine($"{i + 1}. {geselecteerdeAfspeellijst.Nummers[i].ToString()}");
             }
 
-            Console.WriteLine($"{geselecteerdePlaylist.Liedje.Count + 1}. Ga terug naar het menu");
+            Console.WriteLine($"{geselecteerdeAfspeellijst.Nummer.Count + 1}. Ga terug naar het menu");
             Console.Write("Liedje: ");
             optie = int.Parse(Console.ReadLine());
 
-            if (optie == geselecteerdePlaylist.Liedje.Count + 1)
+            if (optie == geselecteerdeAfspeellijst.Nummer.Count + 1)
             {
                 Console.WriteLine();
                 return;
             }
 
-            if (optie < 1 || optie > geselecteerdePlaylist.Liedje.Count)
+            if (optie < 1 || optie > geselecteerdeAfspeellijst.Nummer.Count)
             {
                 Console.WriteLine("Geen geldige optie");
                 Console.WriteLine();
                 return;
             }
 
-            Liedje geselecteerdeLiedje = geselecteerdePlaylist.Liedje[optie - 1];
+            Nummer geselecteerdeNummer = geselecteerdeAfspeellijst.Nummer[optie - 1];
 
             Console.WriteLine();
-            Console.WriteLine($"Nu speeld '{geselecteerdeLiedje.ToString()}' van '{geselecteerdePlaylist.Liedje}'!");
+            Console.WriteLine($"Nu speeld '{geselecteerdeNummer.ToString()}' van '{geselecteerdeAfspeellijst.Nummer}'!");
             Console.WriteLine();
 
         }
     }
 }
-    
