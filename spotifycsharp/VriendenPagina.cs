@@ -8,13 +8,7 @@ namespace spotifycsharp
 {
     internal class VriendenPagina
     {
-        /// <summary>
-        /// hardcoded lijst friends word opgehaald. 
-        /// </summary>
         private List<string> vrienden = new List<string> { "John", "Jane", "Jack" };
-        /// <summary>
-        /// methode die input vraagt en vanuit hier kan de user navigeren naar Viewfriends waar vrienden hardcoded staan of ze kunnen kiezen om terug naar het menu te gaan. 
-        /// </summary>
         public void Display()
         {
 
@@ -51,7 +45,7 @@ namespace spotifycsharp
 
         private void BekijkVrienden()
         {
-            Console.WriteLine("Friends List:");
+            Console.WriteLine("Vriendenlijst:");
             foreach (string vriend in vrienden)
             {
                 Console.WriteLine(vriend);
