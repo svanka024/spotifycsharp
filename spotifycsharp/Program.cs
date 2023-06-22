@@ -21,7 +21,7 @@
                 {
                     case 1:
                         Console.WriteLine("naar Playlistpagina..");
-                        PlaylistPagina playlistPagina = new PlaylistPagina();
+                        AfspeellijstPagina playlistPagina = new AfspeellijstPagina();
                         playlistPagina.DisplayPlaylistPagina();
                         break;
 
@@ -39,7 +39,7 @@
 
                     case 4:
                         Console.WriteLine("naar profielpagina..");
-                        ProfielPagina profielProfiel = new ProfielPagina():
+                        ProfielPagina profielProfiel = new ProfielPagina();
                         profielPagina.Display();
                         break;
 
