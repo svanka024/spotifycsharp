@@ -30,14 +30,14 @@ namespace spotifycsharp
                 switch (optie)
                 {
                     case 1:
-                        DisplayNummersForAlbum("The Purge/Trippin", Song.GetSongsForAlbum(1));
+                        DisplayNummersVoorAlbum("The Purge/Trippin", Nummer.GetNummersVoorAlbum(1));
                         break;
                     case 2:
-                        DisplayNummersForAlbum("Bloodlust/In Blood We Trust", Song.GetSongsForAlbum(2));
+                        DisplayNummersVoorAlbum("Bloodlust/In Blood We Trust", Nummer.GetNummersVoorAlbum(2));
                         break;
                     case 3:
-                        DisplayNummersForAlbum("Wareface/Rest In Pieces", Song.GetSongsForAlbum(3));
-                        break;
+                        DisplayNummersVoorAlbum("Wareface/Rest In Pieces", Nummer.GetNummersVoorAlbum(3));
+                        break;  
                     case 0:
                         Console.WriteLine("terug naar begin");
                         break;
@@ -50,10 +50,10 @@ namespace spotifycsharp
             } while (optie != 0);
         }
 
-        private void DisplayNummersForAlbum(string albumNaam, List<Nummer> nummers)
+        private void DisplayNummersVoorAlbum(string albumNaam, List<Nummer> nummers)
         {
             int optie = 0;
-            bool loopSong = false;
+            bool loopNummer = false;
 
             do
             {
@@ -99,20 +99,20 @@ namespace spotifycsharp
                             Console.WriteLine("nummer is nu gepauzeerd");
                             break;
                         case 3:
-                            if (!loopSong)
+                            if (!loopNummer)
                             {
                                 Console.WriteLine("nummer word herhaald");
-                                loopSong = true;
+                                loopNummer = true;
                             }
                             else
                             {
                                 Console.WriteLine("nummer word niet herhaald");
-                                loopSong = false;
+                                loopNummer = false;
                             }
                             break;
                         case 4:
                             Console.WriteLine("toevoegen aan afspeellijst");
-                            AddSongToplaylist(selectedNummer);
+                            VoegNummerAfspeellijst(selectedNummer);
                             break;
 
 
