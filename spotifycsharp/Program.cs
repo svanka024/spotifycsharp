@@ -9,7 +9,7 @@
             do
             {
                 Console.WriteLine("Selecteer je optie!");
-                Console.WriteLine("1, Playlist");
+                Console.WriteLine("1, Afspeellijst");
                 Console.WriteLine("2, Vriendenlijst");
                 Console.WriteLine("3, Album");
                 Console.WriteLine("4, Profiel");
@@ -20,9 +20,9 @@
                 switch (optie) 
                 {
                     case 1:
-                        Console.WriteLine("naar Playlistpagina..");
-                        AfspeellijstPagina playlistPagina = new AfspeellijstPagina();
-                        playlistPagina.DisplayPlaylistPagina();
+                        Console.WriteLine("naar Afspeellijstpagina..");
+                        AfspeellijstPagina afspeellijstPagina = new AfspeellijstPagina();
+                        afspeellijstPagina.DisplayAfspeellijstPagina();
                         break;
 
                     case 2:
