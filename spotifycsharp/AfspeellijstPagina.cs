@@ -41,6 +41,7 @@ namespace spotifycsharp
 
                     default:
                         Console.WriteLine("Geen geldige keuze");
+                        break;
 
                 }
                 Console.WriteLine();
@@ -52,7 +53,7 @@ namespace spotifycsharp
             string afspeellijstNaam = Console.ReadLine();
 
             Afspeellijst nieuwAfspeellijst = new Afspeellijst(afspeellijstNaam);
-            Afspeellijsten.Add(nieuwAfspeellijst);
+            afspeellijsten.Add(nieuwAfspeellijst);
 
             Console.WriteLine($"Nieuwe afspeellijst '{afspeellijstNaam}' is gemaakt");
             Console.WriteLine();
@@ -84,14 +85,14 @@ namespace spotifycsharp
             Console.WriteLine("Afspeellijst: ");
             int optie = int.Parse(Console.ReadLine());
 
-            if (optie < 1 || optie > afspeellijst.Count)
+            if (optie < 1 || optie > afspeellijsten.Count)
             {
                 Console.WriteLine("Geen geldige optie.");
                 Console.WriteLine();
                 return;
             }
-            Afspeellijst afspeellijstVerwijder = afspeellijst[optie - 1];
-            afspeellijst.Remove(afspeellijstVerwijder);
+            Afspeellijst afspeellijstVerwijder = afspeellijsten[optie - 1];
+            afspeellijsten.Remove(afspeellijstVerwijder);
 
             Console.WriteLine($"Afspeellijst '{afspeellijstVerwijder.Naam}' is verwijderd.");
         }
@@ -107,7 +108,7 @@ namespace spotifycsharp
                 Console.WriteLine();
                 return;
             }
-            for (int i = 0; i < afspeellijst.Count; i++)
+            for (int i = 0; i < afspeellijsten.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {afspeellijsten[i].Naam}");
             }
