@@ -74,7 +74,7 @@ namespace spotifycsharp
                     break;
                 }
 
-                nummer selectedNummer = nummers[optie - 1];
+                Nummer selectedNummer = nummers[optie - 1];
 
                 Console.WriteLine($"nummer: {selectedNummer.ToString()}");
                 Console.WriteLine("--------------------------------------------");
@@ -112,7 +112,7 @@ namespace spotifycsharp
                             break;
                         case 4:
                             Console.WriteLine("toevoegen aan afspeellijst");
-                            VoegNummerAfspeellijst(selectedNummer);
+                            AddNummerToAfspeellijst(selectedNummer);
                             break;
 
 

@@ -8,7 +8,7 @@ namespace spotifycsharp
 {
     internal class ProfielPagina
     {
-        public void DisplayProfielPagina()
+        public void Display()
         {
             Console.WriteLine("Welkom, jasper van uden");
             Console.WriteLine("Je abonement eindigd op: " + DateTime.Now.AddDays(30).ToString("dd/MM/yyyy"));
